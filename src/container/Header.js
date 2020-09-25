@@ -2,7 +2,6 @@ import React from 'react';
 import { ReactComponent as NoclopeLogo } from '../svg/app-logo-noclope.svg';
 import { ReactComponent as DisconnectIcon } from '../svg/disconnect.svg';
 import { useHistory, Link } from "react-router-dom";
-import API from '../utils/API'
 
 function Header() {
     let history = useHistory();
