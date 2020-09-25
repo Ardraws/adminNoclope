@@ -2,7 +2,7 @@ import _ from 'lodash'
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import API from '../utils/API';
-import { Search, Grid, Header, Segment } from 'semantic-ui-react'
+import { Search } from 'semantic-ui-react'
 
 const source = _.times(5, () => ({
     title: 'test',
