@@ -132,7 +132,7 @@ function Metrics() {
                     value={value}
                 />
                 <div id="parity" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
-                  <p className="text-2xl font-bold">
+                  <p className="text-2xl font-bold mb-3">
                     Parité Homme/Femme (en %)
                   </p>
                   <div style={{height: "450px"}}>
@@ -158,7 +158,7 @@ function Metrics() {
                   </div>
                 </div>
                 <div id="ages" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
-                  <p className="text-2xl font-bold">
+                  <p className="text-2xl font-bold mb-3">
                     Répartition des âges
                   </p>
                   <div style={{height: "450px"}}>
@@ -187,7 +187,7 @@ function Metrics() {
                   </div>
                 </div>
                 <div id="objectives" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
-                  <p className="text-2xl font-bold">
+                  <p className="text-2xl font-bold mb-3">
                     Rapport des différents objectifs d'arrêt
                   </p>
                   <div style={{height: "450px"}}>
@@ -226,7 +226,7 @@ function Metrics() {
                   </div>
                 </div>
                 <div id="budget" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
-                  <p className="text-2xl font-bold">
+                  <p className="text-2xl font-bold mb-3">
                     Budget
                   </p>
                   <div style={{height: "450px"}}>
@@ -268,7 +268,7 @@ function Metrics() {
                   </div>
                 </div>
                 <div id="signin" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
-                  <p className="text-2xl font-bold">
+                  <p className="text-2xl font-bold mb-3">
                     Nombre de connexions par jour sur l’application et par mois
                   </p>
                   <div style={{height: "450px"}}>
@@ -314,7 +314,7 @@ function Metrics() {
                   </div>
                 </div>
                 <div id="signup" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
-                  <p className="text-2xl font-bold">
+                  <p className="text-2xl font-bold mb-3">
                     Nombre d'inscriptions par jour sur l’application et par mois
                   </p>
                   <div style={{height: "450px"}}>
@@ -360,7 +360,7 @@ function Metrics() {
                   </div>
                 </div>
                 <div id="cigs" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
-                  <p className="text-2xl font-bold">
+                  <p className="text-2xl font-bold mb-3">
                     Nombre de cigarettes fumées par jour (en %)
                   </p>
                   <div style={{height: "450px"}}>
@@ -390,7 +390,7 @@ function Metrics() {
                   </div>
                 </div>
                 <div id="keepers" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
-                  <p className="text-2xl font-bold">
+                  <p className="text-2xl font-bold mb-3">
                     Nombre d’ange gardien moyen par inscrit (en %)
                   </p>
                   <div style={{height: "450px"}}>
