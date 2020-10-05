@@ -1,25 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as AdminIcon } from '../svg/admin-icon.svg';
-import { Form, Input, Button } from 'semantic-ui-react';
+import { Form, Input, Button, Message } from 'semantic-ui-react';
 import { useHistory } from "react-router-dom";
 
 function SignIn() {
     let history = useHistory();
+    const [login, setlogin] = useState();
+    const [password, setpassword] = useState();
+    const [error, seterror] = useState(false)
     const signUser = () => {
-        localStorage.setItem("tokenNoclope", "test");
-        history.push('/')
+        if(login === "admin-noclope" && password === "noclope") {
+            localStorage.setItem("tokenNoclope", "test");
+            history.push('/');
+        } else {
+            seterror(true);
+        }
     }
     return (
-        <div className="min-h-screen flex items-center justify-center -mt-20">
+        <div className="min-h-screen flex items-center justify-center">
             <div className="w-full text-center" style={{maxWidth: "450px"}}>
                 <AdminIcon className="mx-auto" />
                 <p className="w-full text-2xl mt-8 mb-12 font-semibold">
                     Accéder à l'espace administrateur
                 </p>
-                <Form>
-                    <Input fluid className="text-2xl mb-4 border-none shadow-md rounded-md" placeholder="Identifiant"></Input>
-                    <Input fluid className="text-2xl border-none shadow-md rounded-md" placeholder="Mot de passe"></Input>
-                    <Button className="text-2xl text-white bg-noclope-green mt-12 shadow-md rounded-md" onClick={signUser}>
+                <Form error>
+                    <Input name="login" fluid className="text-2xl mb-4 border-none shadow-md rounded-md" placeholder="Identifiant" onChange={(e) => {setlogin(e.target.value); seterror(false)}}></Input>
+                    <Input name="password" fluid className="text-2xl border-none shadow-md rounded-md" placeholder="Mot de passe" onChange={(e) => {setpassword(e.target.value); seterror(false)}}></Input>
+                    {error && (
+                        <Message
+                            className="text-left mb-0"
+                            error
+                            header='Erreur'
+                            content='Identifiant ou mot de passe incorrect.'
+                        />
+                    )}
+                    <Button className="text-2xl text-white bg-noclope-green mt-12 shadow-md rounded-md hover:bg-noclope-darkgreen" onClick={signUser}>
                         Se connecter
                     </Button>
                 </Form>

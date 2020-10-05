@@ -21,8 +21,8 @@ function Header() {
         }
     ]
     return (
-        <header>
-            <div className="bg-noclope-green flex items-center px-6 py-4 xl:px-32 relative fixed z-10">
+        <header className="fixed top-0 left-0 w-full z-50">
+            <div className="bg-noclope-green flex items-center px-6 py-4 xl:px-32 relative">
                 <NoclopeLogo />
                 {location.pathname === "/SignIn" && (
                     <p className="text-white font-semibold text-xl flex-1 text-right">
@@ -33,9 +33,7 @@ function Header() {
                     <div className="absolute top-0 h-full flex justify-center items-center" style={{left: "50%", transform: "translateX(-50%)"}}>
                         {links.map(link => (
                             <div className="mx-12 relative">
-                                {location.pathname === link.path && (
-                                    <div className="bg-white h-2 w-full absolute -mt-6" style={{borderRadius: "0 0 10px 10px"}}></div>
-                                )}
+                                <div className={`bg-white h-3 w-full absolute top-0 -mt-8 transform transition duration-300 ease-in-out ${location.pathname === link.path ? "opcacity-100" : "opacity-0 scale-50"}`} style={{borderRadius: "0 0 10px 10px"}}></div>
                                 <Link className="text-white text-xl font-semibold hover:text-white" to={link.path}>
                                     {link.key}
                                 </Link>
