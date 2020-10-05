@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Icon, Search } from 'semantic-ui-react';
+import { Table } from 'semantic-ui-react';
 
 function Dashboard() {
     return (
