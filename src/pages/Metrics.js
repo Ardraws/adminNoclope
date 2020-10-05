@@ -9,11 +9,56 @@ Chart.Legend.prototype.afterFit = function() {
   this.height = this.height + this.height*(50/100);
 };
 
-const source = _.times(5, () => ({
-    title: 'test',
-    description: 'test',
-    price: 'test',
-  }))
+const source = [
+    {
+      title: 'Parité Homme/Femme (en %)',
+      description: '',
+      price: '',
+      anchor: 'parity'
+    },
+    {
+      title: 'Répartition des âges',
+      description: '',
+      price: '',
+      anchor: 'ages'
+    },
+    {
+      title: `Rapport des différents objectifs d'arrêt`,
+      description: '',
+      price: '',
+      anchor: 'objectives'
+    },
+    {
+      title: 'Budget',
+      description: '',
+      price: '',
+      anchor: 'budget'
+    },
+    {
+      title: 'Nombre de connexions par jour sur l’application et par mois',
+      description: '',
+      price: '',
+      anchor: 'signin'
+    },
+    {
+      title: `Nombre d'inscriptions par jour sur l’application et par mois`,
+      description: '',
+      price: '',
+      anchor: 'signup'
+    },
+    {
+      title: 'Nombre de cigarettes fumées par jour (en %)',
+      description: '',
+      price: '',
+      anchor: 'cigs'
+    },
+    {
+      title: 'Nombre d’ange gardien moyen par inscrit (en %)',
+      description: '',
+      price: '',
+      anchor: 'keepers'
+    },
+  ]
   
   const initialState = {
     loading: false,
@@ -76,13 +121,17 @@ function Metrics() {
                     size="huge"
                     loading={loading}
                     onResultSelect={(e, data) =>
-                        dispatch({ type: 'UPDATE_SELECTION', selection: data.result.title })
+                      { dispatch({ type: 'UPDATE_SELECTION', selection: data.result.title })
+                        console.log(data.result)
+                        var ele = document.getElementById(data.result.anchor);   
+                        window.scrollTo(ele.offsetLeft,ele.offsetTop - 80);
+                      }
                     }
                     onSearchChange={handleSearchChange}
                     results={results}
                     value={value}
                 />
-                <div className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
+                <div id="parity" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
                   <p className="text-2xl font-bold">
                     Parité Homme/Femme (en %)
                   </p>
@@ -108,7 +157,7 @@ function Metrics() {
                       />
                   </div>
                 </div>
-                <div className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
+                <div id="ages" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
                   <p className="text-2xl font-bold">
                     Répartition des âges
                   </p>
@@ -137,7 +186,7 @@ function Metrics() {
                       />
                   </div>
                 </div>
-                <div className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
+                <div id="objectives" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
                   <p className="text-2xl font-bold">
                     Rapport des différents objectifs d'arrêt
                   </p>
@@ -176,7 +225,7 @@ function Metrics() {
                       />
                   </div>
                 </div>
-                <div className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
+                <div id="budget" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
                   <p className="text-2xl font-bold">
                     Budget
                   </p>
@@ -218,7 +267,7 @@ function Metrics() {
                       />
                   </div>
                 </div>
-                <div className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
+                <div id="signin" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
                   <p className="text-2xl font-bold">
                     Nombre de connexions par jour sur l’application et par mois
                   </p>
@@ -264,7 +313,7 @@ function Metrics() {
                       />
                   </div>
                 </div>
-                <div className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
+                <div id="signup" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
                   <p className="text-2xl font-bold">
                     Nombre d'inscriptions par jour sur l’application et par mois
                   </p>
@@ -310,7 +359,7 @@ function Metrics() {
                       />
                   </div>
                 </div>
-                <div className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
+                <div id="cigs" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
                   <p className="text-2xl font-bold">
                     Nombre de cigarettes fumées par jour (en %)
                   </p>
@@ -340,7 +389,7 @@ function Metrics() {
                       />
                   </div>
                 </div>
-                <div className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
+                <div id="keepers" className="shadow-lg w-full py-4 px-6 bg-white rounded-md border mb-12">
                   <p className="text-2xl font-bold">
                     Nombre d’ange gardien moyen par inscrit (en %)
                   </p>
